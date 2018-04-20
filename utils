@@ -5,7 +5,7 @@ readonly state_warning=1
 readonly state_critical=2
 readonly state_unknown=3
 
-readonly OPENSHIFT_CLIENT_BINARY=/usr/bin/oc
+readonly OPENSHIFT_CLIENT_BINARY=$(which oc)
 
 #
 # Print arguments joined by delimiter
