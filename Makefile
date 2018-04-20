@@ -6,10 +6,7 @@ all:	#nothing to build
 install:
 	mkdir -p $(DESTDIR)/$(LIBDIR)/nagios-plugins-openshift
 	cp new-app-and-wait "$(DESTDIR)/$(LIBDIR)/nagios-plugins-openshift/new-app-and-wait"
-	sed -r \
-		-e 's#\b(OPENSHIFT_CLIENT_BINARY=)/usr/bin/oc\b#\1$(LIBDIR)/openshift-origin-client-tools/oc#' \
-		< utils \
-		> "$(DESTDIR)/$(LIBDIR)/nagios-plugins-openshift/utils"
+	cp utils "$(DESTDIR)/$(LIBDIR)/nagios-plugins-openshift/utils"
 	sed -r \
 		-e 's#(^\. )/usr/lib(/nagios-plugins-openshift/utils)$$#\1$(LIBDIR)\2#g' \
 		< write-config \
